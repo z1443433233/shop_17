@@ -9,12 +9,12 @@
     <script type="text/javascript" th:src="@{/js/js.js}"></script>
 
     <script type="text/javascript" th:src="@{/js/wb.js}" charset="utf-8"></script>
+
 </head>
 
 <body>
 <div id="app">
     <div class="mianCont">
-        <span onclick="shopId1()">666</span>
         <div class="top">
             <span>您好！欢迎来到17商城 请&nbsp;<a href="login.html">[登录]</a>&nbsp;<a href="reg.html">[注册]</a></span>
             <span class="topRight">
@@ -25,7 +25,7 @@
    </span>
         </div><!--top/-->
         <div class="lsg">
-            <h1 class="logo"><a href="index.html"><img th:src="@{/images/logo.png}" width="217" height="90"/></a></h1>
+            <h1 class="logo"><a href="/index"><img th:src="@{/images/logo.png}" width="217" height="90"/></a></h1>
             <form action="#" method="get" class="subBox">
                 <div class="subBoxDiv">
                     <input type="text" class="subLeft"/>
@@ -57,21 +57,21 @@
             <div class="pntLeft">
                 <h2 class="Title">所有商品分类
                     <ul class="InPorNav">
-                        <li><a th:onclick="'javascript:kind('+(1)+')'" href="#">纸杯系列</a>
+                        <li><a href="/findShopByKindId?shopKind=1">纸杯系列</a>
                         </li>
-                        <li><a th:onclick="'javascript:kind('+(2)+')'" href="#">PET系列</a>
+                        <li><a href="/findShopByKindId?shopKind=2">PET系列</a>
                         </li>
-                        <li><a th:onclick="'javascript:kind('+(3)+')'" href="#">饮品杯配套系列</a>
+                        <li><a href="/findShopByKindId?shopKind=3">饮品杯配套系列</a>
                         </li>
-                        <li><a th:onclick="'javascript:kind('+(4)+')'" href="#">纸浆环保餐具系列</a>
+                        <li><a href="/findShopByKindId?shopKind=4">纸浆环保餐具系列</a>
                         </li>
-                        <li><a th:onclick="'javascript:kind('+(5)+')'" href="#">纸餐盒系列</a>
+                        <li><a href="/findShopByKindId?shopKind=5">纸餐盒系列</a>
                         </li>
-                        <li><a th:onclick="'javascript:kind('+(6)+')'" href="#">刀叉勺餐具</a>
+                        <li><a href="/findShopByKindId?shopKind=6">刀叉勺餐具</a>
                         </li>
-                        <li><a th:onclick="'javascript:kind('+(7)+')'" href="#">生活用纸</a>
+                        <li><a href="/findShopByKindId?shopKind=7">生活用纸</a>
                         </li>
-                        <li><a th:onclick="'javascript:kind('+(8)+')'" href="#">纸袋/环保打包袋</a>
+                        <li><a href="/findShopByKindId?shopKind=8">纸袋/环保打包袋</a>
                         </li>
                     </ul><!--InPorNav/-->
                 </h2>
@@ -97,21 +97,21 @@
             </div><!--jilu/-->
             <div class="contLeft">
                 <ul class="leftPorNav">
-                    <li><a th:onclick="'javascript:kind('+(1)+')'" href="#">纸杯系列</a>
+                    <li><a href="/findShopByKindId?shopKind=1">纸杯系列</a>
                     </li>
-                    <li><a th:onclick="'javascript:kind('+(2)+')'" href="#">PET系列</a>
+                    <li><a href="/findShopByKindId?shopKind=2">PET系列</a>
                     </li>
-                    <li><a th:onclick="'javascript:kind('+(3)+')'" href="#">饮品杯配套系列</a>
+                    <li><a href="/findShopByKindId?shopKind=3">饮品杯配套系列</a>
                     </li>
-                    <li><a th:onclick="'javascript:kind('+(4)+')'" href="#">纸浆环保餐具系列</a>
+                    <li><a href="/findShopByKindId?shopKind=4">纸浆环保餐具系列</a>
                     </li>
-                    <li><a th:onclick="'javascript:kind('+(5)+')'" href="#">纸餐盒系列</a>
+                    <li><a href="/findShopByKindId?shopKind=5">纸餐盒系列</a>
                     </li>
-                    <li><a th:onclick="'javascript:kind('+(6)+')'" href="#">刀叉勺餐具</a>
+                    <li><a href="/findShopByKindId?shopKind=6">刀叉勺餐具</a>
                     </li>
-                    <li><a th:onclick="'javascript:kind('+(7)+')'" href="#">生活用纸</a>
+                    <li><a href="/findShopByKindId?shopKind=7">生活用纸</a>
                     </li>
-                    <li><a th:onclick="'javascript:kind('+(8)+')'" href="#">纸袋/环保打包袋</a>
+                    <li><a href="/findShopByKindId?shopKind=8">纸袋/环保打包袋</a>
                     </li>
                 </ul><!--InPorNav/-->
             </div><!--contLeft/-->
@@ -119,8 +119,8 @@
                 <div class="frProList">
                     <dl th:each="shop:${shops}">
                         <dt>
-                            <a th:onclick="'javascript:shopId()'" href="#">
-                                <img th:src="${shop.getShop_img()}" width="132" height="129"/>
+                            <a th:onclick="'javascript:shopId('+${shop.getShop_id()}+')'" href="#">
+                                <img  th:src="${shop.getShop_img()}" width="132" height="129"/>
                             </a>
                         </dt>
                         <dd th:text="${shop.getShop_title()}"></dd>
@@ -164,31 +164,26 @@
                 <a href="index.html">商城首页</a>&nbsp;|&nbsp;
                 <a href="product.html">促销中心</a>&nbsp;|&nbsp;
                 <a href="order.html">我的订单</a>&nbsp;|&nbsp;
-                <a href="new.html">新闻动态</a>&nbsp;|&nbsp;
+                <a href="#">新闻动态</a>&nbsp;|&nbsp;
                 <a href="login.html">会员中心</a>&nbsp;|&nbsp;
-                <a href="help.htmll">帮助中心</a>
+                <a href="#">帮助中心</a>
             </p>
         </div><!--footer/-->
     </div><!--mianCont/-->
 </div>
 </body>
 <script type="text/javascript">
-    function kind(shop_kind_id) {
-        var params = {
-            shop_kind_id: shop_kind_id
-        };
-        $("#app").load("/findShopByKindId", params)
-    }
 
-    function shopId1() {
-        alert(123)
-    }
 
-    function shopId(shopId) {
-        var params = {
-            shop_id: shopId
-        };
-        $("#app").load("/findShopById", params)
-    }
+   function shopId(shopId) {
+       var params = {
+           shopId:shopId
+       };
+       $.ajax({
+           url:"findShopById" , // 请求路径
+           type:"POST" , //请求方式
+           data:params
+       });
+   }
 </script>
 </html>

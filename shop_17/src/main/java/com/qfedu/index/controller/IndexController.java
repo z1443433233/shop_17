@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -23,17 +25,23 @@ public class IndexController {
     }
 
     @RequestMapping("/findShopByKindId")
-    public String findShopByKindId(Shop_kind shopKind, Model model) {
-        List<Shop_info> shops = indexService.findShopByKindId(shopKind.getShop_kind_id());
+    public String findShopByKindId(int shopKind,Model model) {
+
+        List<Shop_info> shops = indexService.findShopByKindId(shopKind);
 
         model.addAttribute("shops", shops);
         return "product2";
     }
 
     @RequestMapping("/findShopById")
-    public String findShopById(Shop_info shopInfo, Model model) {
-        model.addAttribute("shop", indexService.findShopById(shopInfo.getShop_id()));
+    public String findShopById(int shopInfo, Model model) {
+        model.addAttribute("shop", indexService.findShopById(shopInfo));
 
         return "proinfo";
+    }
+
+    @RequestMapping("/product2")
+    public String product2() {
+        return "product2";
     }
 }
