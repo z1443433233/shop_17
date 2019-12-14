@@ -119,7 +119,7 @@
                 <div class="frProList">
                     <dl th:each="shop:${shops}">
                         <dt>
-                            <a th:onclick="'javascript:shopId('+${shop.getShop_id()}+')'" href="#">
+                            <a th:href="@{/findShopById(shopId=${shop.getShop_id()})}">
                                 <img  th:src="${shop.getShop_img()}" width="132" height="129"/>
                             </a>
                         </dt>
@@ -176,13 +176,11 @@
 
 
    function shopId(shopId) {
-       var params = {
-           shopId:shopId
-       };
+
        $.ajax({
            url:"findShopById" , // 请求路径
            type:"POST" , //请求方式
-           data:params
+           data:{"shopId":shopId}
        });
    }
 </script>

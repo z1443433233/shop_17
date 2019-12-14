@@ -34,9 +34,11 @@ public class IndexController {
     }
 
     @RequestMapping("/findShopById")
-    public String findShopById(int shopInfo, Model model) {
-        model.addAttribute("shop", indexService.findShopById(shopInfo));
+    public String findShopById(int shopId, Model model) {
 
+        model.addAttribute("shop", indexService.findShopById(shopId));
+
+        System.out.println(shopId);
         return "proinfo";
     }
 
