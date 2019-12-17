@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>17商城</title>
+    <link rel="stylesheet" th:href="@{/css/css.css}" type="text/css">
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/js.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/wb.js}" charset="utf-8"></script>
+</head>
+
+<body>
+<div class="mianCont">
+    <div class="top">
+        <span>您好！欢迎来到17商城 请&nbsp;<a href="login.html">[登录]</a>&nbsp;<a href="reg.html">[注册]</a></span>
+        <span class="topRight">
+    <a href="vip.html">我的17</a>&nbsp;| 
+    <a href="order.html">我的订单</a>&nbsp;| 
+    <a href="login.html">会员中心</a>&nbsp;|
+    <a href="contact.html">联系我们</a>
+   </span>
+    </div><!--top/-->
+    <div class="lsg">
+        <h1 class="logo"><a href="/index"><img th:src="@{/images/logo.png}" width="217" height="90"/></a></h1>
+        <form action="#" method="get" class="subBox">
+            <div class="subBoxDiv">
+                <input type="text" class="subLeft"/>
+                <input type="image" th:src="@{/images/subimg.png}" width="63" height="34" class="sub"/>
+                <div class="hotWord">
+                    热门搜索：
+                    <a href="proinfo.html">冷饮杯</a>&nbsp;
+                    <a href="proinfo.html">热饮杯</a> &nbsp;
+                    <a href="proinfo.html">纸杯</a>&nbsp;
+                    <a href="proinfo.html">纸巾</a> &nbsp;
+                    <a href="proinfo.html">纸巾</a> &nbsp;
+                    <a href="proinfo.html">纸杯</a>&nbsp;
+                </div><!--hotWord/-->
+            </div><!--subBoxDiv/-->
+        </form><!--subBox/-->
+        <div class="gouwuche">
+            <div class="gouCar">
+                <img th:src="@{/images/gouimg.png}" width="19" height="20" style="position:relative;top:6px;"/>&nbsp;|&nbsp;
+                <strong class="red">0</strong>&nbsp;件&nbsp;|
+                <strong class="red">￥ 0.00</strong>
+                <a href="order.html">去结算</a> <img th:src="@{/images/youjian.jpg}" width="5" height="8"/>
+            </div><!--gouCar/-->
+            <div class="myChunlv">
+                <a href="vip.html"><img th:src="@{/images/mychunlv.jpg}" width="112" height="34"/></a>
+            </div><!--myChunlv/-->
+        </div><!--gouwuche/-->
+    </div><!--lsg/-->
+    <div class="pnt">
+        <div class="pntLeft">
+            <h2 class="Title">所有商品分类
+                <ul class="InPorNav">
+                    <li><a href="/findShopByKindId?shopKind=1">纸杯系列</a>
+                    </li>
+                    <li><a href="/findShopByKindId?shopKind=2">PET系列</a>
+                    </li>
+                    <li><a href="/findShopByKindId?shopKind=3">饮品杯配套系列</a>
+                    </li>
+                    <li><a href="/findShopByKindId?shopKind=4">纸浆环保餐具系列</a>
+                    </li>
+                    <li><a href="/findShopByKindId?shopKind=5">纸餐盒系列</a>
+                    </li>
+                    <li><a href="/findShopByKindId?shopKind=6">刀叉勺餐具</a>
+                    </li>
+                    <li><a href="/findShopByKindId?shopKind=7">生活用纸</a>
+                    </li>
+                    <li><a href="/findShopByKindId?shopKind=8">纸袋/环保打包袋</a>
+                    </li>
+                </ul><!--InPorNav/-->
+            </h2>
+        </div><!--pntLeft/-->
+        <div class="pntRight">
+            <ul class="nav">
+                <li><a href="/index">商城首页</a></li>
+                <li class="navCur"><a href="product.html">促销中心</a></li>
+                <li><a href="login.html">会员中心</a></li>
+                <li><a href="help.html">帮助中心</a></li>
+                <div class="clears"></div>
+                <div class="phone">TEL：021-12345678</div>
+            </ul><!--nav/-->
+        </div><!--pntRight/-->
+        <div class="clears"></div>
+    </div><!--pnt/-->
+    <div class="positions">
+        当前位置：<a href="/index">首页</a> &gt; <a href="#" class="posCur">促销商品</a>
+    </div><!--positions/-->
+    <div class="cont">
+        <div class="contLeft">
+            <ul class="leftPorNav">
+                <li><a href="/findShopByKindId?shopKind=1">纸杯系列</a>
+                </li>
+                <li><a href="/findShopByKindId?shopKind=2">PET系列</a>
+                </li>
+                <li><a href="/findShopByKindId?shopKind=3">饮品杯配套系列</a>
+                </li>
+                <li><a href="/findShopByKindId?shopKind=4">纸浆环保餐具系列</a>
+                </li>
+                <li><a href="/findShopByKindId?shopKind=5">纸餐盒系列</a>
+                </li>
+                <li><a href="/findShopByKindId?shopKind=6">刀叉勺餐具</a>
+                </li>
+                <li><a href="/findShopByKindId?shopKind=7">生活用纸</a>
+                </li>
+                <li><a href="/findShopByKindId?shopKind=8">纸袋/环保打包袋</a>
+                </li>
+            </ul><!--InPorNav/-->
+        </div><!--contLeft/-->
+        <div class="contRight" style="border:0;">
+            <div class="proBox">
+                <div id="tsShopContainer">
+                    <div id="tsImgS"><a href="#" title="Images" class="MagicZoom" id="MagicZoom"><img
+                            width="300" height="300" th:src="${shop.getShop_img()}"/></a></div>
+                    <div id="tsPicContainer">
+                        <div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
+                        <div id="tsImgSCon">
+                            <ul>
+                                <li onclick="showPic(0)" rel="MagicZoom" class="tsSelectImg"><img height="42" width="42"
+                                                                                                  th:src="${shop.getShop_img()}"
+                                                                                                  tsImgS="images/01.jpg"/>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tsImgSArrR" onclick="tsScrollArrRight()"></div>
+                    </div>
+                    <img class="MagicZoomLoading" width="16" height="16" th:src="@{/images/loading.gif}"
+                         alt="Loading..."/>
+                    <script th:src="@{/js/ShopShow.js}"></script>
+                </div><!--tsShopContainer/-->
+                <div class="proBoxRight">
+                    <h3 class="proTitle" th:text="${shop.getShop_title()}"></h3><br>
+                    <div th:text="'商品编号：'+${shop.getShop_id()}"></div>
+                    <div>会员价：<strong class="red" th:text="'￥'+${shop.getShop_money()}+'人民币'"></strong></div>
+                    <div>单位：袋</div>
+                    <div>库存：<strong class="red">[有货] </strong> 从上海发货</div>
+                    <ul class="rongliang">
+                        <li>100ml</li>
+                        <li>200ml</li>
+                        <li>300ml</li>
+                        <li>400ml</li>
+                        <li>500ml</li>
+                        <div class="clears"></div>
+                    </ul><!--rongliang/-->
+                    <div class="shuliang2">
+                        数量： <input type="text" value="1"/>
+                    </div><!--shuliang2/-->
+                    <div class="gc">
+                        <a href="order.html"><img th:src="@{/images/goumai.png}" width="117" height="36"/></a>&nbsp;&nbsp;
+                        <a href="#"><img th:src="@{/images/shoucang.png}" width="117" height="36"/></a>
+                    </div><!--gc/-->
+                </div><!--proRight/-->
+                <div class="clears"></div>
+            </div><!--proBox/-->
+            <ul class="fangyuan">
+                <li>商品描述</li>
+                <li>商品参数</li>
+                <li>商品评论</li>
+                <li>商品晒图</li>
+                <div class="clears"></div>
+            </ul><!--fangyuan/-->
+            <div class="fangList">
+                <div class="fangPar" th:text="${shop.getShop_details()}">
+
+                </div><!--fangPar/-->
+                <img th:src="@{/images/ban1.jpg}" width="756" height="310"/>
+            </div><!--fangList/-->
+            <div class="fangList">
+                <h1>商品参数</h1>
+                <ul class="nav">
+
+                    <li th:text="'商品种类：'+${parameter.getShop_kind_name()}"></li>
+
+                    <li th:text="'商品产地：'+${parameter.getShop_origin()}"></li>
+                    <br>
+
+                    <li th:text="'商品材质：'+${parameter.getShop_texture()}"></li>
+
+                    <li th:text="'商品数量：'+${parameter.getShop_number()}"></li>
+                </ul>
+            </div>
+            <div class="fangList">
+                商品评论
+            </div><!--fangList/-->
+            <div class="fangList">
+                <img th:src="@{/images/rdPro1.jpg}" width="132" height="129"/><br/><br/>
+                <img th:src="@{/images/rdPro2.jpg}" width="132" height="129"/><br/><br/>
+                <img th:src="@{/images/rdPro3.jpg}" width="132" height="129"/><br/><br/>
+                <img th:src="@{/images/rdPro4.jpg}" width="132" height="129"/><br/><br/>
+                <img th:src="@{/images/rdPro5.jpg}" width="132" height="129"/><br/><br/>
+            </div><!--fangList/-->
+        </div><!--contRight/-->
+        <div class="clears"></div>
+    </div><!--cont/-->
+    <div class="inHelp">
+        <div class="inHLeft">
+            <h4>帮助中心</h4>
+            <ul class="inHeList">
+                <li><a href="help.html">购物指南</a></li>
+                <li><a href="help.html">支付方式</a></li>
+                <li><a href="help.html">售后服务</a></li>
+                <li><a href="about.html">企业简介</a></li>
+                <div class="clears"></div>
+            </ul><!--inHeList/-->
+        </div><!--inHLeft/-->
+        <div class="inHLeft">
+            <h4>会员服务</h4>
+            <ul class="inHeList">
+                <li><a href="reg.html">会员注册</a></li>
+                <li><a href="login.html">会员登录</a></li>
+                <li><a href="order.html">购物车</a></li>
+                <li><a href="order.html">我的订单</a></li>
+                <div class="clears"></div>
+            </ul><!--inHeList/-->
+        </div><!--inHLeft/-->
+        <div class="inHRight">
+            <h4>全国统一免费服务热线</h4>
+            <div class="telBox">400-0000-0000</div>
+            <div class="weibo">
+            </div>
+        </div><!--inHRight/-->
+        <div class="clears"></div>
+    </div><!--inHelp/-->
+    <div class="footer">
+        <p>
+            <a href="#">进入17官网</a>&nbsp;|&nbsp;
+            <a href="index.html">商城首页</a>&nbsp;|&nbsp;
+            <a href="product.html">促销中心</a>&nbsp;|&nbsp;
+            <a href="order.html">我的订单</a>&nbsp;|&nbsp;
+            <a href="#">新闻动态</a>&nbsp;|&nbsp;
+            <a href="login.html">会员中心</a>&nbsp;|&nbsp;
+            <a href="#">帮助中心</a>
+        </p>
+        <p>
+            版权所有：上海17实业有限公司 版权所有 Copyright 2010-2015 沪ICP备00000000号 <a href="http://www.mycodes.net/" target="_blank">源码之家</a>
+        </p>
+    </div><!--footer/-->
+</div><!--mianCont/-->
+<a href="#" class="backTop">&nbsp;</a>
+</body>
+</html>
