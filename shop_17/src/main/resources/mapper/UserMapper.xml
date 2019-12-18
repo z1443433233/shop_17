@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.user.user.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.user.user.entity.User">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, usercode, username, password,
+  </sql>
+
+  <insert id="insert" parameterType="com.qfedu.user.user.entity.User">
+    insert into sys_user (username, password)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+  </insert>
+
+  <select id="selectByMsg" resultMap="BaseResultMap">
+    select id, username, password from sys_user where username = #{msg}
+  </select>
+
+</mapper>

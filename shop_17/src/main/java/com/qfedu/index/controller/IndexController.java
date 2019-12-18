@@ -38,7 +38,6 @@ public class IndexController {
         model.addAttribute("shop", indexService.findShopById(shopId));
         model.addAttribute("parameter",indexService.findShopParameterById(shopId));
 
-        System.out.println(shopId);
         return "proinfo";
     }
 

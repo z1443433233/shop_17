@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>17商城</title>
@@ -9,6 +9,7 @@
     <script type="text/javascript" th:src="@{/js/js.js}"></script>
 
     <script type="text/javascript" th:src="@{/js/wb.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/js/vue.min.js}"></script>
 </head>
 
 <body>
@@ -158,7 +159,7 @@
             <ul class="fangyuan">
                 <li>商品描述</li>
                 <li>商品参数</li>
-                <li>商品评论</li>
+                <li th:onclick="'javascript:discuss(\''+${shop.getShop_id()}+'\');'">商品评论</li>
                 <li>商品晒图</li>
                 <div class="clears"></div>
             </ul><!--fangyuan/-->
@@ -182,9 +183,22 @@
                     <li th:text="'商品数量：'+${parameter.getShop_number()}"></li>
                 </ul>
             </div>
-            <div class="fangList">
-                商品评论
+
+
+            <div class="fangList" id="discuss">
+                <div v-if="noHaveDiscuss">暂时还没评论。。。。。。</div>
+                <div v-for="discuss in discussList">
+                    <table>
+                        <tr th:border="1">
+                            <td th:width="100px"><font th:size="3px">{{discuss.nickname}}</font></td>
+                            <td th:width="200px"><font th:size="5px">{{discuss.discuss}}</font></td>
+                            <td th:width="200px"><font th:size="3px">{{discuss.date}}</font></td>
+                        </tr>
+                    </table>
+                </div>
             </div><!--fangList/-->
+
+
             <div class="fangList">
                 <img th:src="@{/images/rdPro1.jpg}" width="132" height="129"/><br/><br/>
                 <img th:src="@{/images/rdPro2.jpg}" width="132" height="129"/><br/><br/>
@@ -241,4 +255,29 @@
 </div><!--mianCont/-->
 <a href="#" class="backTop">&nbsp;</a>
 </body>
+
+<script>
+    var vm = new Vue({
+        el: '#discuss',
+        data: {
+            discussList: [],
+            noHaveDiscuss: false
+        }
+    });
+
+    function discuss(shopId) {
+        $.ajax({
+            type: "get",
+            url: "/discuss/selectByPid.do",
+            data: {"shopId": shopId},
+            success: function (data) {
+                if (data == "") {
+                    vm.noHaveDiscuss = true;
+                } else {
+                    vm.discussList = data;
+                }
+            }
+        })
+    }
+</script>
 </html>
