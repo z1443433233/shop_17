@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>17商城</title>
@@ -133,19 +133,11 @@
                     <script th:src="@{/js/ShopShow.js}"></script>
                 </div><!--tsShopContainer/-->
                 <div class="proBoxRight">
-                    <h3 class="proTitle" th:text="${shop.getShop_title()}"></h3><br>
+                    <h3 class="proTitle" th:text="${shop.getShop_title()}"></h3><br><br><br>
                     <div th:text="'商品编号：'+${shop.getShop_id()}"></div>
                     <div>会员价：<strong class="red" th:text="'￥'+${shop.getShop_money()}+'人民币'"></strong></div>
-                    <div>单位：袋</div>
+                    <div>单位：<strong th:text="${shop.getShop_unit()}"></strong></div>
                     <div>库存：<strong class="red">[有货] </strong> 从上海发货</div>
-                    <ul class="rongliang">
-                        <li>100ml</li>
-                        <li>200ml</li>
-                        <li>300ml</li>
-                        <li>400ml</li>
-                        <li>500ml</li>
-                        <div class="clears"></div>
-                    </ul><!--rongliang/-->
                     <div class="shuliang2">
                         数量： <input type="text" value="1"/>
                     </div><!--shuliang2/-->

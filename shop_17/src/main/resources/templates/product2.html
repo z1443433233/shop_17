@@ -124,7 +124,7 @@
                             </a>
                         </dt>
                         <dd th:text="${shop.getShop_title()}"></dd>
-                        <dd class="cheng" th:text="${shop.getShop_money()}"></dd>
+                        <dd class="cheng" th:text="'￥'+${shop.getShop_money()}+'元'"></dd>
                     </dl>
 
                 </div><!--frProList-->

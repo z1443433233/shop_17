@@ -25,4 +25,7 @@ public class Shop_info {
     // 商品种类ID
     private int shop_kind_id;
 
+    // 商品单位
+    private String shop_unit;
+
 }

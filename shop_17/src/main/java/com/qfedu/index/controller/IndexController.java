@@ -2,6 +2,7 @@ package com.qfedu.index.controller;
 
 import com.qfedu.index.entity.Shop_info;
 import com.qfedu.index.entity.Shop_kind;
+import com.qfedu.index.entity.Shop_recommend;
 import com.qfedu.index.service.impl.IndexServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,10 +18,22 @@ public class IndexController {
     private IndexServiceImpl indexService;
 
     @RequestMapping("/index")
-    public String index(Model model) {
-        model.addAttribute("recommendShops", indexService.recommendShop());
-        model.addAttribute("shops01", indexService.findShopByKindId(1));
+    public String index() {
         return "index";
+    }
+
+    @RequestMapping("/findByKindId")
+    @ResponseBody
+    public List<Shop_info> findByKindId(int shopKindId) {
+        List<Shop_info> shops = indexService.findShopByKindId(shopKindId);
+        return shops;
+    }
+
+    @RequestMapping("/findShopRecommend")
+    @ResponseBody
+    public List<Shop_recommend> findShopRecommend() {
+        List<Shop_recommend> shops = indexService.recommendShop();
+        return shops;
     }
 
     @RequestMapping("/findShopByKindId")
