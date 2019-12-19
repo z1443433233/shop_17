@@ -177,17 +177,15 @@
             </div>
 
 
-            <div class="fangList" id="discuss">
+            <div class="fangList" id="discuss" >
                 <div v-if="noHaveDiscuss">暂时还没评论。。。。。。</div>
-                <div v-for="discuss in discussList">
-                    <table>
+                    <table v-for="discuss in discussList">
                         <tr th:border="1">
                             <td th:width="100px"><font th:size="3px">{{discuss.nickname}}</font></td>
                             <td th:width="200px"><font th:size="5px">{{discuss.discuss}}</font></td>
                             <td th:width="200px"><font th:size="3px">{{discuss.date}}</font></td>
                         </tr>
                     </table>
-                </div>
             </div><!--fangList/-->
 
 
@@ -271,5 +269,6 @@
             }
         })
     }
+    new V
 </script>
 </html>
