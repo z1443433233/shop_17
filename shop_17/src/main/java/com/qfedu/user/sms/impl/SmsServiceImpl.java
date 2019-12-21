@@ -1,7 +1,7 @@
 package com.qfedu.user.sms.impl;
 
 import com.qfedu.user.common.vo.R;
-import com.qfedu.user.config.RedisKeyConfig;
+import com.qfedu.config.RedisKeyConfig;
 import com.qfedu.user.dto.PhoneDto;
 import com.qfedu.user.sms.SmsService;
 import com.qfedu.user.utils.AliSmsUtil;

@@ -1,4 +1,4 @@
-package com.qfedu.user.config;
+package com.qfedu.config;
 
 import com.qfedu.user.utils.JedisUtil;
 import org.springframework.context.annotation.Bean;

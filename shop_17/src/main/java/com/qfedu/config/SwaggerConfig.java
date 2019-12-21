@@ -1,4 +1,4 @@
-package com.qfedu.user.config;
+package com.qfedu.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +26,6 @@ public class SwaggerConfig {
     @Bean
     public Docket createD(){
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(createAI()).select().
-                apis(RequestHandlerSelectors.basePackage("com.zz")).build();
+                apis(RequestHandlerSelectors.basePackage("com.qfedu")).build();
     }
 }

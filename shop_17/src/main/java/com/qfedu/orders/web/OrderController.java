@@ -1,20 +1,31 @@
 package com.qfedu.orders.web;
 
-import org.springframework.stereotype.Controller;
+import com.qfedu.orders.entity.Order;
+import com.qfedu.orders.service.OrderService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
  *
  * @author : Wzl
  * @version : 0.0.1
- * @date : 2019/12/19/17:57
+ * @date : 2019/12/21/20:32
  */
-@Controller
+@RestController
+@Api(value = "订单相关操作",tags = "订单相关操作")
 public class OrderController {
-    @GetMapping("/user/order/select.do")
-    public String selectOrder(int id) {
-        System.out.println("测试");
-        return "";
+    @Autowired
+    private OrderService orderService;
+
+    @GetMapping("/showOrders")
+    @ApiOperation(value = "实现查看会员的所有订单查询",notes = "实现查看会员的所有订单查询")
+    public List<Order> showOrders(int uid) {
+        return orderService.selectByPrimaryKey(uid);
     }
 }

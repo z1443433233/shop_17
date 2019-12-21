@@ -17,4 +17,9 @@ public class SysController {
     public String loginPage() {
         return "login";
     }
+
+    @RequestMapping("/orderPage")
+    public String orderPage() {
+        return "vipOrder";
+    }
 }

@@ -2,7 +2,7 @@ package com.qfedu.user.user.service.impl;
 
 import com.qfedu.user.common.result.ResultCode;
 import com.qfedu.user.common.vo.R;
-import com.qfedu.user.config.RedisKeyConfig;
+import com.qfedu.config.RedisKeyConfig;
 import com.qfedu.user.user.dao.UserMapper;
 import com.qfedu.user.user.entity.User;
 import com.qfedu.user.user.service.UserService;

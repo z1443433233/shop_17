@@ -1,4 +1,4 @@
-package com.qfedu.user.config;
+package com.qfedu.config;
 
 import org.springframework.context.annotation.Configuration;
 

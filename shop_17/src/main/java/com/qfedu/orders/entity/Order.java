@@ -1,6 +1,7 @@
 package com.qfedu.orders.entity;
 
 import lombok.Data;
+
 import java.util.Date;
 
 @Data
@@ -18,4 +19,7 @@ public class Order {
     private Byte ostatus;
 
     private Integer discussId;
+
+    private String shopName;
+
 }
