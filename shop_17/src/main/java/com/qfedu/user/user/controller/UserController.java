@@ -21,21 +21,21 @@ public class UserController {
     private UserService userService;
 
     @ApiOperation(value = "校验注册是否重复", notes = "校验注册是否重复")
-    @GetMapping("/api/user/checkmsg.do")
+    @GetMapping("/checkmsg.do")
     @ResponseBody
     public R checkMsg(String msg) {
         return userService.select(msg);
     }
 
     @ApiOperation(value = "实现会员的注册",notes = "实现会员的注册")
-    @PostMapping("/api/user//register.do")
+    @PostMapping("/register.do")
     @ResponseBody
     public R register(@RequestBody User user){
         return userService.register(user);
     }
 
     @ApiOperation(value = "实现会员的登录",notes = "实现会员的登录")
-    @PostMapping("/api/user/login.do")
+    @PostMapping("/login.do")
     public String login(String name, String password, Model model){
         R login = userService.login(name, password);
         if (login.getCode() == 200) {

@@ -39,7 +39,7 @@
             });
 
             $.ajax({
-                url: "findByKindId", // 请求路径
+                url: "/findByKindId", // 请求路径
                 type: "POST", //请求方式
                 data: {"shopKindId": 1},
                 success: function (data) {
@@ -52,7 +52,7 @@
 
             });
             $.ajax({
-                url: "findByKindId", // 请求路径
+                url: "/findByKindId", // 请求路径
                 type: "POST", //请求方式
                 data: {"shopKindId": 6},
                 success: function (data) {
@@ -64,7 +64,7 @@
             });
 
             $.ajax({
-                url: "findByKindId", // 请求路径
+                url: "/findByKindId", // 请求路径
                 type: "POST", //请求方式
                 data: {"shopKindId": 4},
                 success: function (data) {
@@ -75,7 +75,7 @@
                 }//表示如果请求响应出现错误，会执行的回调函数
             });
             $.ajax({
-                url: "findShopRecommend", // 请求路径
+                url: "/findShopRecommend", // 请求路径
                 type: "POST", //请求方式
                 success: function (data) {
                     vm4.rShops = data;
