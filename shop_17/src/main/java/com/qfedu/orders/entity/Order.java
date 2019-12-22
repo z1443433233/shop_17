@@ -8,18 +8,17 @@ import java.util.Date;
 public class Order {
     private Integer id;
 
+    /**用户id*/
     private Integer uid;
-
+    /**商品id*/
     private Integer shoId;
-
+    /**商品价格*/
     private Double oprice;
-
-    private Date otime;
-
+    /**购买时间*/
+    private String otime;
+    /**订单状态*/
     private Byte ostatus;
-
+    /**评论id*/
     private Integer discussId;
-
-    private String shopName;
 
 }

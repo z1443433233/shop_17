@@ -1,6 +1,7 @@
 package com.qfedu.orders.service;
 
 import com.qfedu.orders.entity.Order;
+import com.qfedu.orders.vo.OrdersVo;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface OrderService {
 
     int insert(Order record);
 
-    List<Order> selectByPrimaryKey(Integer id);
+    List<OrdersVo> selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Order record);
 

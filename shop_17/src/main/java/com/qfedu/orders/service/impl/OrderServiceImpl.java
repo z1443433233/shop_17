@@ -3,6 +3,7 @@ package com.qfedu.orders.service.impl;
 import com.qfedu.orders.dao.OrderMapper;
 import com.qfedu.orders.entity.Order;
 import com.qfedu.orders.service.OrderService;
+import com.qfedu.orders.vo.OrdersVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> selectByPrimaryKey(Integer id) {
+    public List<OrdersVo> selectByPrimaryKey(Integer id) {
         return orderMapper.selectByPrimaryKey(id);
     }
 

@@ -2,6 +2,7 @@ package com.qfedu.orders.web;
 
 import com.qfedu.orders.entity.Order;
 import com.qfedu.orders.service.OrderService;
+import com.qfedu.orders.vo.OrdersVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class OrderController {
 
     @GetMapping("/showOrders")
     @ApiOperation(value = "实现查看会员的所有订单查询",notes = "实现查看会员的所有订单查询")
-    public List<Order> showOrders(int uid) {
+    public List<OrdersVo> showOrders(int uid) {
         return orderService.selectByPrimaryKey(uid);
     }
 }

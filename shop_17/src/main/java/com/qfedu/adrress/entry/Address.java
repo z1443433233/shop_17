@@ -1,8 +1,14 @@
-package com.qfedu.user.user.entity;
-
+package com.qfedu.adrress.entry;
 
 import lombok.Data;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @author : Wzl
+ * @version : 0.0.1
+ * @date : 2019/12/22/11:05
+ */
 @Data
 public class Address {
     private Integer id;
@@ -16,9 +22,8 @@ public class Address {
     private String city;
     //电话
     private String tel;
-    //县
-    private String county;
+    //订单的id
+    private int oid;
     //详细地址
     private String desadd;
-
 }

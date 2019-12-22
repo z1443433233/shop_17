@@ -1,6 +1,7 @@
 package com.qfedu.orders.dao;
 
 import com.qfedu.orders.entity.Order;
+import com.qfedu.orders.vo.OrdersVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface OrderMapper {
 
     int insert(Order record);
 
-    List<Order> selectByPrimaryKey(Integer id);
+    List<OrdersVo> selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Order record);
 
