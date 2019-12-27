@@ -1,5 +1,6 @@
 package com.qfedu.index.controller;
 
+import com.qfedu.adrress.entry.Address;
 import com.qfedu.index.entity.Shop_info;
 import com.qfedu.index.entity.Shop_kind;
 import com.qfedu.index.entity.Shop_recommend;

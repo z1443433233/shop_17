@@ -36,6 +36,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<OrdersVo> selectNoDiscuss(Integer id) {
+        return orderMapper.selectNoDiscuss(id);
+    }
+
+    @Override
     public int updateByPrimaryKeySelective(Order record) {
         return 0;
     }

@@ -33,4 +33,10 @@ public class DiscussServiceImpl implements DiscussService {
     public OrderShopInfo discussShopInfo(int id) {
         return discussMapper.discussShopInfo(id);
     }
+
+    @Override
+    public int insert(Discuss record) {
+        discussMapper.insert(record);
+        return discussMapper.updateStatus(record.getOid());
+    }
 }

@@ -11,6 +11,7 @@ public interface DiscussMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(Discuss record);
+    int updateStatus(int oid);
 
     int insertSelective(Discuss record);
 

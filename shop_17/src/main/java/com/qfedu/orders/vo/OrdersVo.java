@@ -1,6 +1,8 @@
 package com.qfedu.orders.vo;
 
 import com.qfedu.adrress.entry.Address;
+import com.qfedu.index.entity.Shop;
+import com.qfedu.index.entity.Shop_info;
 import com.qfedu.orders.entity.Order;
 import lombok.Data;
 
@@ -13,8 +15,8 @@ import lombok.Data;
  */
 @Data
 public class OrdersVo {
-    //商品名字
-    private String shopName;
+    //商品照片url
+    private String shopImg;
     //收件人姓名
     private String uName;
     //订单类对象

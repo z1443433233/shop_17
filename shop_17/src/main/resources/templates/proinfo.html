@@ -151,7 +151,7 @@
             <ul class="fangyuan">
                 <li>商品描述</li>
                 <li>商品参数</li>
-                <li th:onclick="'javascript:discuss(\''+${shop.getShop_id()}+'\');'">商品评论</li>
+                <li th:onclick="'discuss(\''+${shop.getShop_id()}+'\');'">商品评论</li>
                 <li>商品晒图</li>
                 <div class="clears"></div>
             </ul><!--fangyuan/-->
@@ -265,6 +265,7 @@
                     vm.noHaveDiscuss = true;
                 } else {
                     vm.discussList = data;
+
                 }
             }
         })

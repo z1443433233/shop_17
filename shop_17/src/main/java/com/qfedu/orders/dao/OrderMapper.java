@@ -14,6 +14,8 @@ public interface OrderMapper {
 
     List<OrdersVo> selectByPrimaryKey(Integer id);
 
+    List<OrdersVo> selectNoDiscuss(Integer id);
+
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);

@@ -37,4 +37,11 @@ public class DiscussController {
         model.addAttribute("orderShopInfo",discussService.discussShopInfo(id));
         return "";
     }
+
+    @ApiOperation(value = "跳转评价界面", notes = "跳转评价界面")
+    @PostMapping("/insertOrder")
+    @ResponseBody
+    public int insert(Discuss record) {
+        return discussService.insert(record);
+    }
 }

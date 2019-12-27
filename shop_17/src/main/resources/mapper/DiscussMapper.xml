@@ -51,11 +51,13 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.qfedu.discuss.entity.Discuss">
-    insert into sys_product_discuss (id, uid, pid, 
-      discuss, date)
+    insert into sys_product_discuss (id, uid, pid, discuss, date)
     values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, 
-      #{discuss,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP})
+      #{discuss,jdbcType=VARCHAR}, now())
   </insert>
+  <update id="updateStatus">
+    update sys_orders set ostatus=2;
+  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.discuss.entity.Discuss">
     update sys_product_discuss
     <set>

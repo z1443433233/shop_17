@@ -1,8 +1,10 @@
 package com.qfedu.orders.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 public class Order {
@@ -15,10 +17,9 @@ public class Order {
     /**商品价格*/
     private Double oprice;
     /**购买时间*/
-    private String otime;
+    private Date otime;
     /**订单状态*/
     private Byte ostatus;
     /**评论id*/
     private Integer discussId;
-
 }

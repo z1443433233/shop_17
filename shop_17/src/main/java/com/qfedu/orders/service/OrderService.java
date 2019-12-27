@@ -18,6 +18,7 @@ public interface OrderService {
     int insert(Order record);
 
     List<OrdersVo> selectByPrimaryKey(Integer id);
+    List<OrdersVo> selectNoDiscuss(Integer id);
 
     int updateByPrimaryKeySelective(Order record);
 

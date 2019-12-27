@@ -39,6 +39,7 @@ public class UserController {
     public String login(String name, String password, Model model){
         R login = userService.login(name, password);
         if (login.getCode() == 200) {
+            model.addAttribute("user",login);
             return "index";
         } else {
             model.addAttribute("msg","账号或密码错误");

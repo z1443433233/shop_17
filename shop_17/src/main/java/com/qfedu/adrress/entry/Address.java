@@ -1,5 +1,7 @@
 package com.qfedu.adrress.entry;
 
+import com.qfedu.orders.entity.Order;
+import com.qfedu.orders.vo.OrdersVo;
 import lombok.Data;
 
 /**

@@ -16,4 +16,6 @@ public interface DiscussService {
      List<Discuss> selectByPrimaryKey(Integer pid);
 
      OrderShopInfo discussShopInfo(int id);
+
+     int insert(Discuss record);
 }
